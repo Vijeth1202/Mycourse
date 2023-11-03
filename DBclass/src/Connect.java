@@ -17,18 +17,22 @@ public class Connect {
 			//Establish the connection
 			String url="jdbc:mysql://localhost:3306/viju";
 			String user="root";
-			String pass="*****";
+			String pass="Viju!123*";
 			connection =DriverManager.getConnection(url, user, pass);
 			System.out.println("Connection established Successfully..");
+			System.out.println();
 			System.out.println("The implementation class name is.."+connection.getClass().getName());
 
 			//Create  statement and send the query
-			String sqlQuery="select * from employee";
+			String sqlquery1="select * from employee";
 			statement = connection.createStatement();
-			resultSet= statement.executeQuery(sqlQuery);
+			resultSet= statement.executeQuery(sqlquery1);
+			System.out.println("The implementation class name is.."+statement.getClass().getName());
+			System.out.println("The implementation class name is.."+resultSet.getClass().getName());
+			System.out.println();
 			
 			System.out.println("eid\tename\tage\tsalary\taddress");
-			
+			//Process the resultset
 			while(resultSet.next())
 			{
 				Integer eid=resultSet.getInt(1);
@@ -44,7 +48,7 @@ public class Connect {
 			
 			
 			
-			
+		//Handle the Exceptions	
 			
 		}
 		catch(ClassNotFoundException ce)		
@@ -58,6 +62,7 @@ public class Connect {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+		//Close the resources
 		finally
 		{
 			if(connection!=null)
