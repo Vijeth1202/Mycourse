@@ -20,7 +20,7 @@ public class DleteApp {
 			System.out.println("Statement Object created Sucessfully");
 
 			
-			String deleteQuery="Delete from employee where eid=1";
+			String deleteQuery="Delete from employee where eid=8";
 			int rowsAffected=statement.executeUpdate(deleteQuery);
 			
 			System.out.println("Number of rows affected ::"+rowsAffected);
